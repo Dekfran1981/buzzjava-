@@ -1,4 +1,4 @@
-
+//
 let nombreCurso;
 
 nombreCurso = "Javascript";
@@ -15,7 +15,7 @@ console.log("--> Esto es el curso de " + nombreCurso + " - " + comision );
 
 let numeroUno = 5
 let numeroDos = 10
-let resultado = numero + numeroDos;
+let resultado = numeroUno + numeroDos;
 console.log("--> Resultado " + resultado );
 
 nombreCurso = prompt("Que curso estas dictando hoy ?");
