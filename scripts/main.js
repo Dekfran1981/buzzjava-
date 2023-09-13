@@ -1,25 +1,29 @@
-//
-let nombreCurso;
+let agencia = "Agencia de Viajes";
+console.log(`--> Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`);
 
-nombreCurso = "Javascript";
-console.log("--> El nombre del curso al que le damos la bienvenida es " + nombreCurso)
+let cliente = prompt("Por favor, comparte tu nombre para conocerte mejor.");
 
-const NOMBRE_PROFESOR = "Saul"
+console.log(`--> Hola ${cliente}, gracias por preferirnos. A partir de ahora, viajarás con ${agencia} hacia destinos exclusivos.`);
 
-let nombreEstudiante = "Pepe GRillo "
-const DIAS_DE_LA_SEMANA = 7;
+let destinos = prompt("Ingrese uno de los siguientes destinos: París, Nueva York, Bangkok, Tokio, Roma, Sídney, Londres, Estambul, Río de Janeiro, Buenos Aires");
+console.log(`--> Ofrecemos ${destinos.length} destinos diferentes para que elijas tú próxima aventura.`);
 
-let comision = " 47600"
+const presupuesto = 5000;
+let precioTotal = 150;
 
-console.log("--> Esto es el curso de " + nombreCurso + " - " + comision );
+if (precioTotal > presupuesto) {
+  console.log(`--> Lo sentimos ${cliente}, no tenemos opciones que encajen en tu presupuesto.`);
+} else {
+  console.log(`--> Te ofrecemos un gran viaje por $${precioTotal}, con alojamiento en un hotel y actividades inclusas. ¿Te gustaría contemplar esta oferta?`);
+}
 
-let numeroUno = 5
-let numeroDos = 10
-let resultado = numeroUno + numeroDos;
-console.log("--> Resultado " + resultado );
+for (let destino of destinos) {
+  console.log(destino);
+}
 
-nombreCurso = prompt("Que curso estas dictando hoy ?");
-nombreEstudiante = prompt ( " dime el nombre de un estudiante ");
-console.log("--> Ingesaste un valor de el estudiante con nombre : " + nombreEstudiante);
+let i = 1;
 
-alert( " nombreEstudiante + " , nombreCurso); 
+while (i <= destinos.length) {
+  console.log(`--> Tenemos ${i} destinos diferentes para que puedas explorar.`);
+  i++;
+} 
