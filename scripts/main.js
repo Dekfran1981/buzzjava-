@@ -1,5 +1,8 @@
-let agencia = "Agencia de Viajes";
-console.log(`--> Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`);
+
+
+(function() {
+  let agencia = "Agencia de Viajes";
+  console.log(`--> Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`);
 
 let cliente = prompt("Por favor, comparte tu nombre para conocerte mejor.");
 
@@ -27,3 +30,5 @@ while (i <= destinos.length) {
   console.log(`--> Tenemos ${i} destinos diferentes para que puedas explorar.`);
   i++;
 } 
+
+})();
