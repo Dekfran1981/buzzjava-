@@ -1,10 +1,3 @@
-function Buzz() {
-  return "hola";
-}
-
-const saludo = Buzz();
-console.log(saludo);
-
 let agencia = "Agencia de Viajes";
 console.log(`--> Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`);
 
@@ -23,13 +16,13 @@ if (precioTotal > presupuesto) {
   console.log(`--> Te ofrecemos un gran viaje por $${precioTotal}, con alojamiento en un hotel y actividades incluidas. ¿Te gustaría contemplar esta oferta?`);
 }
 
-let destinosArray = destinos.split(', ');
-for (let destino of destinosArray) {
+for (let destino of destinos.split(', ')) {
   console.log(destino);
 }
 
 let i = 1;
-while (i <= destinosArray.length) {
+
+while (i <= destinos.split(', ').length) {
   console.log(`--> Tenemos ${i} destinos diferentes para que puedas explorar.`);
   i++;
 }
@@ -42,21 +35,21 @@ function suma(num1, num2) {
 }
 
 const resultadoSuma = suma(num1, num2);
-console.log(resultadoSuma);
+console.log(`El resultado de la suma es: ${resultadoSuma}`);
 
 function resta(num1, num2) {
   return num1 - num2;
 }
 
 const resultadoResta = resta(num1, num2);
-console.log(resultadoResta);
+console.log(`El resultado de la resta es: ${resultadoResta}`);
 
 function concatenacion(num1, num2) {
   return num1.toString() + num2.toString();
 }
 
 const resultadoConcatenacion = concatenacion(num1, num2);
-console.log(resultadoConcatenacion);
+console.log(`El resultado de la concatenación es: ${resultadoConcatenacion}`);
 
 function division(num1, num2) {
   if (num2 === 0) {
@@ -71,21 +64,37 @@ let resultado;
 
 switch (operacion) {
   case "suma":
-    resultado = resultadoSuma;
-    console.log(`El resultado de la suma es: ${resultado}`);
+    resultado = suma(num1, num2);
+    console.log(`El resultado de la suma es: ${resultadosuma}`);
     break;
   case "resta":
-    resultado = resultadoResta;
-    console.log(`El resultado de la resta es: ${resultado}`);
+    resultado = resta(num1, num2);
+    console.log(`El resultado de la resta es: ${resultadoresta}`);
     break;
   case "concatenación":
-    resultado = resultadoConcatenacion;
-    console.log(`El resultado de la concatenación es: ${resultado}`);
+    resultado = concatenacion(num1, num2);
+    console.log(`El resultado de la concatenación es: ${resultadoconcatenacion}`);
     break;
   case "división":
     resultado = division(num1, num2);
-    console.log(`El resultado de la división es: ${resultado}`);
+    console.log(`El resultado de la división es: ${resultadodivision}`);
     break;
   default:
     console.log("Operación inválida");
 }
+
+function sumByCondition(array, condition) {
+  var total = 0;
+  for (var number of array) {
+    if (condition(number)) {
+      total += number;
+    }
+  }
+  return total;
+}
+
+const array1 = [12, 10, 5, 3, 1, 45];
+const sumGreaterThan10 = sumByCondition(array1, function(number) {
+  return number > 10;
+});
+console.log(`The sum of numbers greater than 10 in array1 is: ${sumGreaterThan10}`);
