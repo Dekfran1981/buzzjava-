@@ -1,6 +1,9 @@
 let agencia = "Agencia de Viajes";
 console.log(`--> Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`);
 
+
+
+
 let cliente = prompt("Por favor, comparte tu nombre para conocerte mejor.");
 console.log(`--> Hola ${cliente}, gracias por preferirnos. A partir de ahora, viajarás con ${agencia} hacia destinos exclusivos.`);
 
@@ -98,3 +101,10 @@ const sumGreaterThan10 = sumByCondition(array1, function(number) {
   return number > 10;
 });
 console.log(`The sum of numbers greater than 10 in array1 is: ${sumGreaterThan10}`);
+
+
+console.log(document.getElementsById("tablebody"));
+
+console.log(document.getElementsByClassName("paises"));
+
+console.log(document.getElementsByTagName("div"));
