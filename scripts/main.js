@@ -1,90 +1,58 @@
-let agencia = "Agencia de Viajes";
-console.log(`--> Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`);
+const agencia = "Agencia de Viajes";
+const titulo = document.querySelector("#titulo");
+titulo.textContent = `Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`;
 
+const formulario = document.querySelector("#formulario");
+const clienteInput = document.querySelector("#cliente");
+const destinosInput = document.querySelector("#destinos");
 
+formulario.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const cliente = clienteInput.value;
+  const destinos = destinosInput.value.split(", ");
 
+  mostrarMensaje(`Hola ${cliente}, gracias por preferirnos. A partir de ahora, viajarás con ${agencia} hacia destinos exclusivos.`);
 
-let cliente = prompt("Por favor, comparte tu nombre para conocerte mejor.");
-console.log(`--> Hola ${cliente}, gracias por preferirnos. A partir de ahora, viajarás con ${agencia} hacia destinos exclusivos.`);
+  mostrarMensaje(`Ofrecemos ${destinos.length} destinos diferentes para que elijas tu próxima aventura.`);
 
-let destinos = prompt("Ingrese uno de los siguientes destinos: París, Nueva York, Bangkok, Tokio, Roma, Sídney, Londres, Estambul, Río de Janeiro, Buenos Aires");
-console.log(`--> Ofrecemos ${destinos.split(', ').length} destinos diferentes para que elijas tu próxima aventura.`);
+  const presupuesto = 6000;
+  const precioTotal = 250;
 
-const presupuesto = 6000;
-let precioTotal = 250;
-
-if (precioTotal > presupuesto) {
-  console.log(`--> Lo sentimos ${cliente}, no tenemos opciones que encajen en tu presupuesto.`);
-} else {
-  console.log(`--> Te ofrecemos un gran viaje por $${precioTotal}, con alojamiento en un hotel y actividades incluidas. ¿Te gustaría contemplar esta oferta?`);
-}
-
-for (let destino of destinos.split(', ')) {
-  console.log(destino);
-}
-
-let i = 1;
-
-while (i <= destinos.split(', ').length) {
-  console.log(`--> Tenemos ${i} destinos diferentes para que puedas explorar.`);
-  i++;
-}
-
-let num1 = Number(prompt("Ingrese el primer número:"));
-let num2 = Number(prompt("Ingrese el segundo número:"));
-
-function suma(num1, num2) {
-  return num1 + num2;
-}
-
-const resultadoSuma = suma(num1, num2);
-console.log(`El resultado de la suma es: ${resultadoSuma}`);
-
-function resta(num1, num2) {
-  return num1 - num2;
-}
-
-const resultadoResta = resta(num1, num2);
-console.log(`El resultado de la resta es: ${resultadoResta}`);
-
-function concatenacion(num1, num2) {
-  return num1.toString() + num2.toString();
-}
-
-const resultadoConcatenacion = concatenacion(num1, num2);
-console.log(`El resultado de la concatenación es: ${resultadoConcatenacion}`);
-
-function division(num1, num2) {
-  if (num2 === 0) {
-    return "No es posible dividir entre cero";
+  if (precioTotal > presupuesto) {
+    mostrarMensaje(`Lo sentimos ${cliente}, no tenemos opciones que encajen en tu presupuesto.`);
   } else {
-    return num1 / num2;
+    mostrarMensaje(`Te ofrecemos un gran viaje por $${precioTotal}, con alojamiento en un hotel y actividades incluidas. ¿Te gustaría contemplar esta oferta?`);
   }
+
+  for (let destino of destinos) {
+    mostrarMensaje(destino);
+  }
+
+  let sumGreaterThan10 = sumByCondition(destinos, number => number > 10);
+  mostrarMensaje(`The sum of numbers greater than 10 in the array is: ${sumGreaterThan10}`);
+});
+
+function mostrarMensaje(mensaje) {
+  const mensajeElement = document.createElement("p");
+  mensajeElement.textContent = mensaje;
+  document.body.appendChild(mensajeElement);
 }
 
-let operacion = prompt("Ingrese la operación que desea realizar (suma, resta, concatenación, división):");
-let resultado;
+const boton1 = document.getElementById("boton1");
+const boton2 = document.getElementById("boton2");
+const boton3 = document.getElementById("boton3");
 
-switch (operacion) {
-  case "suma":
-    resultado = suma(num1, num2);
-    console.log(`El resultado de la suma es: ${resultadosuma}`);
-    break;
-  case "resta":
-    resultado = resta(num1, num2);
-    console.log(`El resultado de la resta es: ${resultadoresta}`);
-    break;
-  case "concatenación":
-    resultado = concatenacion(num1, num2);
-    console.log(`El resultado de la concatenación es: ${resultadoconcatenacion}`);
-    break;
-  case "división":
-    resultado = division(num1, num2);
-    console.log(`El resultado de la división es: ${resultadodivision}`);
-    break;
-  default:
-    console.log("Operación inválida");
-}
+boton1.addEventListener("click", function() {
+  boton1.style.background = 'red';
+});
+
+boton2.addEventListener("click", function() {
+  boton2.style.background = 'blue';
+});
+
+boton3.addEventListener("click", function() {
+  boton3.style.background = 'green';
+});
 
 function sumByCondition(array, condition) {
   var total = 0;
@@ -96,15 +64,3 @@ function sumByCondition(array, condition) {
   return total;
 }
 
-const array1 = [12, 10, 5, 3, 1, 45];
-const sumGreaterThan10 = sumByCondition(array1, function(number) {
-  return number > 10;
-});
-console.log(`The sum of numbers greater than 10 in array1 is: ${sumGreaterThan10}`);
-
-
-console.log(document.getElementsById("tablebody"));
-
-console.log(document.getElementsByClassName("paises"));
-
-console.log(document.getElementsByTagName("div"));
