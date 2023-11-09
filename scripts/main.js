@@ -1,6 +1,7 @@
 const agencia = "Agencia de Viajes";
+
 const titulo = document.querySelector("#titulo");
-titulo.textContent = `Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras.`;
+titulo.textContent = `Bienvenidos a ${agencia}, el lugar perfecto para planificar tus próximas aventuras`;
 
 const formulario = document.querySelector("#formulario");
 const clienteInput = document.querySelector("#cliente");
@@ -28,8 +29,14 @@ formulario.addEventListener("submit", function(event) {
     mostrarMensaje(destino);
   }
 
-  let sumGreaterThan10 = sumByCondition(destinos, number => number > 10);
-  mostrarMensaje(`The sum of numbers greater than 10 in the array is: ${sumGreaterThan10}`);
+  const sumGreaterThan10Promise = sumByCondition(destinos, number => number > 10);
+  sumGreaterThan10Promise
+    .then(sumGreaterThan10 => {
+      mostrarMensaje(`La suma de los números mayores a 10 en el array es: ${sumGreaterThan10}`);
+    })
+    .catch(error => {
+      mostrarMensaje(`Ha ocurrido un error: ${error}`);
+    });
 });
 
 function mostrarMensaje(mensaje) {
@@ -55,12 +62,17 @@ boton3.addEventListener("click", function() {
 });
 
 function sumByCondition(array, condition) {
-  var total = 0;
-  for (var number of array) {
-    if (condition(number)) {
-      total += number;
+  return new Promise((resolve, reject) => {
+    let total = 0;
+    for (let number of array) {
+      if (condition(number)) {
+        total += number;
+      }
     }
-  }
-  return total;
+    if (total) {
+      resolve(total);
+    } else {
+      reject("No se encontraron números que cumplan con la condición");
+    }
+  });
 }
-
