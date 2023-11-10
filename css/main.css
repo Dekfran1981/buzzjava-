@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin: 1rem 0;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: scale(1.1);
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .imagen-principal {
+    position: relative;
+  }
+  
+  .imagen-principal img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 500px;
+  }
+  
+  .texto-principal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .texto-principal h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .grilla {
+    height: auto;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  
+  .grilla a {
+    display: block;
+    position: relative;
+  }
+  
+  .seccion-titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo img,
+  .quien img,
+  .servicios img,
+  .productos img,
+  .contacto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  .logo-texto,
+  .seccion-titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo-texto {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .formulario-contacto {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .formulario-contacto input[type='text'],
+  .formulario-contacto input[type='email'],
+  .formulario-contacto input[type='tel'],
+  .formulario-contacto textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-size: 1.2rem;
+  }
+  
+  .formulario-contacto input[type='submit'],
+  .formulario-contacto input[type='reset'] {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .formulario-contacto input[type='submit'] {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .formulario-contacto input[type='reset'] {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .formulario-contacto input[type='submit']:hover,
+  .formulario-contacto input[type='reset']:hover {
+    transform: scale(1.1);
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .formulario-contacto textarea {
+    height: 10rem;
+  }
+  
+  .footer {
+    background-color: white;
+    color: #ffffff;
+    font-size: 4rem; 
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto; 
+    margin-bottom: 0; 
+    position: fixed; 
+    width: 100%; 
+    bottom: 0; 
+  }
+  
+  .footer p {
+    margin: 1rem 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .grilla {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 1rem;
+    }
+  
+    .footer {
+      font-size: 1.6rem; 
+      padding: 0.5rem;
+    }
+  
+    .formulario-contacto {
+      padding: 1rem;
+      font-size: 50rem;
+    }
+  }
+  
+  .logo,
+  .quien,
+  .servicios,
+  .productos,
+  .contacto {
+    height: 300px;
+  }
+  
+  .logo-texto {
+    top: calc(50% + 50px);
+  }
+  
+  .seccion-titulo {
+    top: calc(50% - 50px);
+  }
+  
+  .logo img {
+    z-index: 2;
+  }
+  
+  .nacionales .logo-texto {
+    top: 50%;
+  }
+  
+  .imagen-principal img {
+    max-height: 500px;
+  }
