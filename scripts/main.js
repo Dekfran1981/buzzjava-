@@ -1,5 +1,6 @@
 const agencia = "Agencia de Viajes";
 const titulo = document.querySelector("#titulo");
+const url = "http://127.0.0.1:5501/";
 
 Swal.fire({
   icon: "error",
